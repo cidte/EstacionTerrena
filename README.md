@@ -10,7 +10,7 @@ Para comenzar con el Arduino agregue las librerías del proyecto y conecte los c
 
 Cargue el código en la placa Arduino UNO, esta no ejecuta ninguna acción hasta conectarse a la librería Hamlib. 
 
-## Configuracion de Raspberry Pi
+## Configuración de Raspberry Pi
 
 Debe tener una conexión remota con las Raspberry Pi (RPi) de la estación terrena vía SSH, por ejemplo:
 ```bash
