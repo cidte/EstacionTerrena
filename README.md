@@ -4,7 +4,7 @@ Este repositorio incluye los archivos de control y electrónica para el rotor de
 
 ## Código de control
 
-El archivo "control_CIDTE" incluye el codigo de Arduino para motores de corriente directa.
+El archivo [control_CIDTE](control_CIDTE) incluye el codigo de Arduino para motores de corriente directa.
 
 Para comenzar con el Arduino agregue las librerías del proyecto y conecte los componentes electrónicos, antes de ejecutar el código de control.
 
