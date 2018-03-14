@@ -10,17 +10,44 @@ Para comenzar con el Arduino agregue las librerías del proyecto y conecte los c
 
 Cargue el código en la placa Arduino UNO, esta no ejecuta ninguna acción hasta conectarse a la librería Hamlib. 
 
-## Configuración de Raspberry Pi
+## Configuración de la computadora del usuario
+
+La computadora del usuario, ejecuta el software de la estación terrena, para rastreo satelital Gpredict y Gqrx como receptor.
+
+Instale el software Gpredict y la librería completa de Hamlib con los comandos:
+```bash
+    sudo apt-get install ham-lib
+    sudo apt-get install hamlib-dev libasound-dev libv4l-dev
+    sudo apt-get install libhamlib-utils
+    sudo apt-get install gpredict
+```
+Para instalar Gqrx ejecute los siguientes comandos, para información más detallada visite [Gqrx SDR](http://gqrx.dk/download/install-ubuntu):
+```bash
+    sudo apt-get purge --auto-remove gqrx
+    sudo apt-get purge --auto-remove gqrx-sdr
+    sudo apt-get purge --auto-remove libgnuradio*
+    sudo add-apt-repository -y ppa:bladerf/bladerf
+    sudo add-apt-repository -y ppa:myriadrf/drivers
+    sudo add-apt-repository -y ppa:myriadrf/gnuradio
+    sudo add-apt-repository -y ppa:gqrx/gqrx-sdr
+    sudo apt-get update
+    sudo apt-get install gqrx-sdr
+    sudo apt-get install libvolk1-bin
+    volk_profile
+```
 
 Debe tener una conexión remota con las Raspberry Pi (RPi) de la estación terrena vía SSH, por ejemplo:
 ```bash
       ssh pi@10.1.135.143
 ```
-
 Si no conoce la dirección IP de la RPi, puede buscarla en la red del CIDTE con el comando:
 ```bash
       nmap -p22 10.1.135.0/24
 ```
+
+## Configuración de Raspberry Pi
+
+Establezca primero la conexión SSH con la RPi desde la computadora del usuario.
 
 Debe instalar la librería completa de Hamlib para Gpredict con los siguientes comandos:
 ```bash
@@ -41,6 +68,7 @@ Para conectar el rotor a Gpredict ejecute:
 ```bash
       rotctld -m 202 -r /dev/ttyACM0 -s 19200 -C timeout=500 -vvv
 ```
+
 ## Electrónica
 
 Los diagramas de conexión y esquemático se desarrollaron en fritzing.
