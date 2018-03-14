@@ -41,7 +41,7 @@ Para conectar el rotor a Gpredict ejecute:
 ```bash
       rotctld -m 202 -r /dev/ttyACM0 -s 19200 -C timeout=500 -vvv
 ```
-## Electrónca
+## Electrónica
 
 Los diagramas de conexión y esquemático se desarrollaron en fritzing.
 
